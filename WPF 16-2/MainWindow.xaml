@@ -1,0 +1,94 @@
+﻿<Window x:Class="WPF_16_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_16_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Canvas Background="Bisque">
+        <Rectangle Name="cube"
+                 Fill="LawnGreen"
+                 Stroke="Aquamarine"
+                 Width="100"
+                 Height="100"
+                 Canvas.Left="175"
+                 Canvas.Bottom="0">
+            <Rectangle.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Bottom)"
+                                             From="0"
+                                             To="300"
+                                             Duration="0:0:3"
+                                             DecelerationRatio="1"
+                                             AutoReverse="True"
+                                             RepeatBehavior="Forever">                               
+                                
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Rectangle.Triggers>     
+        </Rectangle>
+
+
+
+        <Ellipse Name="ball"
+                 Fill="DarkMagenta"
+                 Stroke="Aquamarine"
+                 Width="100"
+                 Height="100"
+                 Canvas.Left="50"
+                 Canvas.Bottom="0">
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Bottom)"
+                                             From="0"
+                                             To="250"
+                                             Duration="0:0:2"
+                                             DecelerationRatio="1"
+                                             AutoReverse="True"
+                                             RepeatBehavior="Forever">
+
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+
+        <Ellipse Name="ball2"
+                 Fill="Orange"
+                 Stroke="Aquamarine"
+                 Width="70"
+                 Height="70"
+                 Canvas.Left="300"
+                 Canvas.Bottom="0">
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Canvas.Bottom)"
+                                             From="0"
+                                             To="250"
+                                             Duration="0:0:5"
+                                             DecelerationRatio="0.5"
+                                             AutoReverse="True"
+                                             RepeatBehavior="Forever">
+
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+
+
+
+
+    </Canvas>
+</Window>
